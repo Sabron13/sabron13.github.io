@@ -24,10 +24,7 @@ h1 {
 	border: 0px solid #ff322f;
 	border-radius: 12px;
 	font-family: courier;
-}
-
-h1 > p {
-	color: #ffad4c;
+	color: #ffad4c
 }
 
 div {
