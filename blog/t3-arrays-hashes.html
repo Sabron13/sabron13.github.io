@@ -13,26 +13,34 @@
   
   <section>
     <h2>1-11-2015</h2>
-    <p>
+    <p>Arrays and hashes are collections of objects in ruby. The main difference between them is how they are indexed. In arrays the objects can be
+      called by using an integer:
+      <pre class="prettyprint lang-ruby">
+        arr = [1, 2, 3]
+        arr[0]
+        => 1
+      </pre>
 
-      
-        def my_method(param)
-          while i = 0 do
-            i + 1
-          end
-          p "Easy Peasy"
-        end
-      
-      ```ruby
-      require 'redcarpet'
-      markdown = Redcarpet.new("Hello World!")
-      puts markdown.to_html
-      ```
-      
+      While elements of a hash are called by a predetermined key provided by the programmer:
+      <pre class="prettypring lang-ruby">  
+        hash = { 
+          :food => "taco"
+          :drink => "horchata"
+          :desert => "flan"
+          }
+        hash[:dessert]
+        => "flan"
+      </pre>
     </p>
     
-
-    <p>
+    <p>Other than that, the main differences are one's of syntax. When creating an array we use brackets:
+      <pre class="prettypring lang-ruby"> 
+        []
+      </pre>
+      When creating or denoting a hash we use braces:
+      <pre class="prettypring lang-ruby">  
+        {}
+      </pre>
         
     </p>
     <p>
