@@ -1,0 +1,13 @@
+h1, h3, p { font-family: sans-serif;}
+        header { background: lightblue; }
+        header h1, header p { text-align: center; }
+        header { padding-bottom: 5px;  
+                 padding-top: 5px;}
+        section { display: inline-block; 
+                  width: 31%;
+                  height: 00px;
+                  margin: 10px;
+                  border: 2px solid green;
+                  top: 0px;
+                  left: 0px; }
+        section h3 { vertical-align: top;}
