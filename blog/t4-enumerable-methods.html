@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+  <title>Enumerable#cycle</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+  <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+</head>
+
+<main>
+  <div>
+  <h1>Enumerable#cycle</h1>
+
+  </div>
+  
+  <section>
+    <h2>1-17-2015</h2>
+    <p>Before I talk about cycle I want to talk about <i>enumerators</i> first. Enumerator is just a fancy word for something that can be counted.
+      So arrays <pre class="prettyprint"><code>[1, 2, 3]</code></pre> and hashes <pre class="prettyprint"><code>{:one => 1, :two => 2, :three => 3}</code></pre> can be enumerators. Also ranges: <pre class="prettyprint"><code>0..5</code></pre>
+
+    <p>So the cycle method is pretty much self explanatory. It will cycle through the enumerator until told to stop by an argument you supply in parentheses.
+      Next is a code block that tells cycle what to do as it goes through the enumerator, which in this case tells it to return and print <i>x + 1</i> to the screen.
+      <pre class="prettyprint"><code>
+[1, 2, 3].cycle(3) { |x| p x + 1}
+=> "2, 3, 4, 2, 3, 4, 2, 3, 4"</code></pre>
+      
+    </p>
+    
+
+    <p>You might have noticed that our little code's output did not increment upon itself. I mean we got "2, 3, 4, 2, 3, 4, 2, 3, 4" instead of "2, 3, 4, 3, 4, 5, 4, 5, 6". 
+      That's because cycle saves the elements in an internal array so that they are not changed after the first cycle. Pretty neat!
+        
+    </p>
+    <p>
+
+    </p>
+  </section>
+    
+      <!-- copy and paste as many sections as you want to add paragraphs -->
+  
+</main>
+

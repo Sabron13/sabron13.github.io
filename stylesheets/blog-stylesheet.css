@@ -24,3 +24,16 @@ section {
 ol {
 	text-align: left;
 }
+
+code {
+  background-color: #d3d3d3;
+  font-family: monospace;
+  font-size: 1.2em;
+  line-height: 1.2em;
+}
+pre {
+  background-color: #d3d3d3;
+  white-space: pre-wrap;
+  display: inline-block;
+  margin: 1em;
+  padding: 1em;
