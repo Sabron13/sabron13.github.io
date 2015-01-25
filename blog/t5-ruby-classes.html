@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+  <title>Ruby Classes/title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+</head>
+
+
+<body>
+  <section>
+  <h1>Ruby Classes</h1>
+
+  </section>
+  
+  <section>
+    <h2>1/24/15</h2>
+    <p>Classes in Ruby are great for when you want to create many objects that will have the same attributes, like most books have an author and a title, but different values, meaning different authors and titles. Say you've been charged to create an online cataloge for a book store. Using instance variables through a class you can distinguish books by <i>author</i>, <i>title</i>, and <i>genre</i> as well.
+      
+    </p>
+    
+
+    <p><pre class="prettyprint"><code>
+      class Book 
+        attr_reader :author, :title, :genre # creates methods for each attribute, #author and #title, that return their instance variable values
+        attr_writer  
+        attr_accessor :price, :quote # creates two methods each for each attribute:  #method= for setting the attr value and #method for returning the attr value
+
+        def initialize(author, title, genre) # takes three arguments when creating a new object of the Book class
+          @author = author # sets the instance variables that will be available to all methods within the Book class
+          @title = title
+          @genre = genre
+        end
+
+        def book_info # a method to display all the books information in a couple sentences.
+          puts "#{@title} written by #{@author} costs $#{"%.2f" % @price}. An exerpt: #{@quote} Genre: #{@genre.to_s}"
+        end
+
+  
+      end
+
+      bible = Book.new("Jesus", "The Bible", :Historical_Fiction) # instantiating a new object 'bible' written by 'Jesus' called 'The Bible'
+      bible.price = 10000000000.00 # sets price of 'bible' to 10000000000.00.
+      puts "#{bible.title} that #{bible.author} wrote costs $#{"%.2f" % bible.price} on Craigslist." #=> "The Bible that Jesus wrote costs $10000000000.00 on Craigslist."
+      bible.quote = 'Yea Jesus spoketh, "Who wants to party?", then turned the water unto wine.' # sets quote
+      puts bible.quote # displays quote
+      puts bible.genre # displays genre
+      bible.book_info # calls #book_info on object bible.</code></pre>
+        
+    </p>
+    <p>The class Book I designed is a short example of how you could go about creating the digital catalogue for a book store. It is able to give each instance of the class attributes sucha as author, title, genre and can even hold and change such information as price and quotes. Our little program could easily be expanded upon. We could add a hash to keep a numbered list of all a book's chapters, or even keep a quote from each chapter. We could also use a hash to create an index of important terms and concepts and where they appear in the book.
+
+    </p>
+  </section>
+    
+      
+</body>
+
