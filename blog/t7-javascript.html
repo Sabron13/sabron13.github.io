@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+  <title>JavaScript</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="sabron13.github.io/stylesheets/blog-stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+</head>
+
+<body>
+  <h1 id="heading">JavaScript vs Ruby- Looping</h1>
+  
+
+  <section>
+    <h2>2-8-2015</h2>
+    
+    <p>Looping in programming is a way to tell a computer to repeat a task until a certain condition is met. If the condition is
+      not met, however, the computer will go on and on with it's task for forever, or at least its battery life, or if it is plugged in
+      until the processor burns up, or until you interrupt it with a command. The point is, it probably won't go on forever, but
+      would if it had the capability.
+    </p>
+    
+    <p>Both Ruby and JavaScript both utilize looping and at first glance they can look very similar.
+    </p>
+    
+    <p><pre class="prettyprint"><code>
+        while x < 10
+          x += 1
+        end</code></pre>
+
+      <pre class="prettyprint"><code>
+        while (x < 10) {
+          x += 1
+        }</code></pre>
+    </p>
+    
+    <p>Here we have a Ruby while loop at the top and a JavaScript loop at the bottom. Just from previously knowing Ruby, the JavaScript syntax
+      is pretty easy to understand, but there are a couple subtle differences. In JS the expression after the <em>while</em> keyword is put in parentheses
+      and then followed by an opening curly brace <i>{</i>. Then the code block in the middle is the same, but Ruby closes its loop with keyword
+      <em>end</em> while JS closes its block with closing curly brace <i>}</i>, which are functionally the same, they both end the while statement.
+      In Ruby the curly braces mean the same as the keywords <em>do</em> and <em>end</em>, and the code block could be opened with <em>do</em>, but 
+      is omitted for brevity's sake. So overall pretty similar.
+    </p>
+    
+    <p>The for loop is where we see the biggest difference. In Ruby the for loop is used to iterate through a group of things, usually an array. In JS
+      for loops are used the same as while loops with a counter.
+    </p>
+
+    <p><pre class="prettyprint"><code>
+      for x in array
+        puts x + 1
+      end</code></pre>
+
+      <pre class="prettyprint"><code>
+      var x = 0;
+      for (var counter = 0; counter < 10; counter++)
+        console.log(x + 1);</code></pre>
+    </p>
+
+    <p>Here we see two totally different looking codes except for the mathematical expression x + 1. We even see some new notation we haven't seen in Ruby. The Ruby code at the top
+      is a very short program that adds 1 to all the elements in <em>array</em>. In the bottom JS code we see that x is a stand alone variable set to 0 and
+      the for loop creates a counter set to 0 and means to increment up 9 by 1 (the funny counter++ means the same as counter += 1). So in the end our output is the number the number one 10 times. Two things with the same name, but totally different outcomes.
+    </p>
+
+    <p>Besides the for and while Ruby has a host of other keywords to iterate through things. It has <em>unless</em>, <em>until</em>, <em>loop</em>, <em>redo</em> and <em>retry</em> to name a few. For JS the for and while loops are pretty much it, except for <em>do</em>.
+    </p>
+
+     
+  </section>
+</body>
+
