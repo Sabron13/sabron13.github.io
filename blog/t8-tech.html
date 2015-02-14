@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+  <title>Regular Expressions</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="sabron13.github.io/stylesheets/blog-stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+</head>
+
+<body>
+  <h1 id="heading">Regular Expressions</h1>
+  
+
+  <section>
+    <h2>2-14-2015</h2>
+    <p>Regular expressions are the seemingly indecipherable string of characters and symbols used when trying to match some user input with what you would expect them to input. Something like this:
+    </p>
+
+    <p><pre class="prettyprint"><code>
+      /[A-Za-z]+,[A-Za-z]+,Mrs?\./.match("Schnelker,Kurt,Mr.,Unemployed")
+      => #&#60MatchData "Schnelker,Kurt,Mr."></code></pre>     
+    </p>
+
+    <p>So let's break this down. In this example we are calling the method match on a regular expression and feeding it a string to match against. The regular expression or regexp is denoted by two forward slashes, like so: "/.../". What comes between is all the good stuff. In order to explain this I'm going to treat the regexp as if it were groups searching independent things, but it's not. It's really searching for one long string. The first group "[A-Za-z]+,"" is looking for a string of capital and lowercase letters (denoted by the ranges A-Z and a-z) followex by a comma. The plus sign after the ranges says that it will match one or more characters in the ranges. The comma at the end is simply looking for a comma. This so happens to match my last name, a capital letter followed by multiple lowercase letters and a comma. 
+    </p>
+    
+    <p>The next group is doing the same thing, but it's looking for the second occurence of a string of uppercase letters followed by a string of lower case letters and a comma, which happens to be my first name. The next bit "Mrs?\." matches to the Mr. but why? It seems like it's looking for Mrs. That's because the ? is a special character that says maybe the s will be there and maybe not. It knows to look for that instead of a question mark because the character question mark has been "escaped" by the backslash "\". And that's it. It doesn't match the "Unemployed" part because the regexp stops after the period after Mr. because I'd rather not dwell on the fact that I'm unemployed right now \nervous laughter.
+    </p>
+    
+    <p>So the output of our bit of code was that interesting pound sign followed by the MatchData class and our string. Basically it's returning an object, an instance of the class MatchData that is our string. So what can we do with that? Well, say I want to address a letter to my future self (perhaps to calm myself down in case of a panic attack from being unemployed). I can further select elements of the regexp by using parentheses, like so:
+    </p>
+
+    <p><pre class="prettyprint"><code>
+      /[A-Za-z]+,([A-Za-z]+),Mrs?\./match("Schnelker,Kurt,Mr.,Unemployed")</code></pre>
+    </p>
+
+    <p> By selecting the bit that matches my first name with parentheses I've stored it in a global variable that can be used anywhere in my program. Ruby gives it the name of "$1". Had I put my last name in parentheses too, then my last name would be in the variable "$1" and my first name would be in the variable "$2". This is because my last name comes first in our regexp and my first name comes second. Had I also parenthesized the Mr. it would have been stored in "$3" and so the pattern continues.
+    </p>
+
+    <p>In this example I showed you how to match a regular expression and a string. But that's not all. A regexp can also be used to replace a bit of string with something else using the "gsub" method.
+    </p>
+  </section>
+</body>
+
